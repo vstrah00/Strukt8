@@ -6,7 +6,7 @@
 int main(){
     Position root=NULL;
     Position extra=NULL;
-    int comNum=0;
+    int comNum=0, check=0;
     while(1){
         printf("\n1. Insert"
                 "\n2. Inorder print"
@@ -36,8 +36,9 @@ int main(){
                 PostOrderPrint(root);
                 break;
             case 5:
-                LevelOrderPrint(root);
-
+                check=LevelOrderPrint(root);
+                if(check<0)
+                    return 0;
                 break;
             case 7:
                 freeTree(root);
